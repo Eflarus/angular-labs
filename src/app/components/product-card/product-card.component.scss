@@ -1,0 +1,21 @@
+.image-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  left: 0; top: 0; right: 0; bottom: 0;
+  overflow-y: auto;
+  z-index: -1;
+}
+
+.image-card {
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
