@@ -1,0 +1,15 @@
+<div class="drag-drop-item">
+  <div *cdkDragPlaceholder class="drop-placeholder"></div>
+  <mat-card #container class="note-card-container">
+    <div [routerLink]="link">
+      <mat-card-title>{{ cardTitle }}</mat-card-title>
+      <mat-card-content #bodyContent>
+        <p>{{ cardText }}</p>
+        <div #truncator class="fade-out-truncation"></div>
+      </mat-card-content>
+    </div>
+    <ion-icon (click)="onXButtonClick()" class="x-button" name="close-outline"></ion-icon>
+    <ion-icon class="move-button" name="expand-outline"></ion-icon>
+  </mat-card>
+
+</div>

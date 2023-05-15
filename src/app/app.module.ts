@@ -13,9 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { IonicModule } from '@ionic/angular';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { NotesListComponent } from './components/notes-list/notes-list.component';
+import {MatIconModule} from "@angular/material/icon";
+import { NoteCardComponent } from './components/note-card/note-card.component';
+import { NoteDetailsPageComponent } from './components/note-details-page/note-details-page.component';
+import {CdkDrag, CdkDragPlaceholder, CdkDropList} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -26,7 +31,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     LoginFormComponent,
     ProductCardComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
+    NotesListComponent,
+    NoteCardComponent,
+    NoteDetailsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,12 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    FormsModule,
+    MatIconModule,
+    CdkDropList,
+    CdkDrag,
+    CdkDragPlaceholder
   ],
   providers: [],
   bootstrap: [AppComponent]

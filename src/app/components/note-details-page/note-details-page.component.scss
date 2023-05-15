@@ -1,0 +1,19 @@
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  padding-top: 50px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.button-row button{
+  float: right;
+  margin-left: 8px;
+}
+textarea{
+  min-height: 250px;
+}

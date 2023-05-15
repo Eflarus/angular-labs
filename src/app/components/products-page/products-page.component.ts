@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Product} from "../common/product.interface";
+import {Product} from "../../shared/product.interface";
 
 @Component({
   selector: 'app-products-page',

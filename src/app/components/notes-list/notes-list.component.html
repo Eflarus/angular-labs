@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div class="search-bar-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="filter($any($event.target).value)" class="input" type="text" placeholder="filter"/>
+      <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+    <ion-icon name="add-outline" class="add-note-button" routerLink="/new"></ion-icon>
+  </div>
+
+  <div class="notes-list drag-drop-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <app-note-card
+      @myInsertRemoveTrigger
+      *ngFor="let note of filteredNotes; index as i"
+      (delete)="deleteNote(i)"
+      [link]="'/'+[i]"
+      [cardTitle]="note.title"
+      [cardText]="note.content"
+      cdkDrag
+    ></app-note-card>
+  </div>
+</div>
