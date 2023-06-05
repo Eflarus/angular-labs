@@ -22,17 +22,13 @@ export class NoteCardComponent implements OnInit {
   @Input() link: string | undefined;
 
   @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
-
   @ViewChild('truncator') truncator: ElementRef<HTMLElement>;
-
   @ViewChild('bodyContent') bodyContent: ElementRef<HTMLElement>;
-
   constructor(private rendererFactory: RendererFactory2) {
   }
 
   ngOnInit(): void {
     const renderer = this.rendererFactory.createRenderer(null, null);
-
     if (this.bodyContent != undefined) {
       let style = window.getComputedStyle(this.bodyContent.nativeElement, null);
       let viewableHeight = parseInt(style.height, 10);

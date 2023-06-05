@@ -85,9 +85,9 @@ export class NotesListComponent implements OnInit {
     terms = this.removeDuplicates(terms);
 
     terms.forEach(term => {
-       let results  = this.relevantNotes(term);
+      let results = this.relevantNotes(term);
 
-       allResults = [...allResults, ...results]
+      allResults = [...allResults, ...results]
     })
 
     this.filteredNotes = this.removeDuplicates(allResults);
@@ -112,11 +112,10 @@ export class NotesListComponent implements OnInit {
 
   drop($event: CdkDragDrop<Note[]>) {
 
-    console.log("prev = ", $event.previousIndex );
-    console.log("curr = ", $event.currentIndex );
+    console.log("prev = ", $event.previousIndex);
+    console.log("curr = ", $event.currentIndex);
 
-    this.notesService.move($event.previousIndex, $event.currentIndex );
+    this.notesService.move($event.previousIndex, $event.currentIndex);
 
   }
 }
-

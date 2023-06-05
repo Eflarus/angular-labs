@@ -25,25 +25,27 @@ export class NoteDetailsPageComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       if (params['id']) {
         this.note = this.notesService.get(params['id']);
-        if (this.note != null) {
+        if (this.note != undefined) {
           this.noteId = params['id'];
           this.new = false;
         } else {
           this.new = true;
         }
-
       } else {
         this.new = true;
       }
     })
-    // this.note = new Note();
+    if (this.new){
+      this.note = new Note();
+      this.router.navigateByUrl("/new");
+
+    }
   }
 
   onSubmit(noteForm: NgForm) {
     if (this.new) {
       this.notesService.add(noteForm.value);
     } else {
-
       this.notesService.update(this.noteId, noteForm.value.title, noteForm.value.content);
     }
     this.router.navigateByUrl("/q");
